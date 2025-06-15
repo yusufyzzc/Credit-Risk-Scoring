@@ -2,10 +2,9 @@ FROM python:3.9-slim
 
 WORKDIR /app
 
-COPY requierement.txt .
+COPY requirements.txt .
 
-RUN pip install --no-cache-dir -r requierement.txt
-RUN pip install flask flask-cors scikit-learn numpy joblib
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
