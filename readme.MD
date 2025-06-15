@@ -17,7 +17,7 @@ This project is a **machine learning-powered API** that predicts the risk of cre
 - GitHub Actions
 
 
-## 🚀 Installation
+## Installation
 
 1. Clone the repository:
 ```bash
@@ -37,31 +37,8 @@ docker build -t credit-risk-backend .
 docker run -p 5000:5000 credit-risk-backend
 ```
 
-## 📝 API Usage
 
-### Calculate Risk Score
-
-```bash
-curl -X POST http://localhost:5000/predict \
--H "Content-Type: application/json" \
--d '{
-    "age": 35,
-    "income": 50000,
-    "debt": 10000,
-    "openLoans": 2,
-    "latePayments": 1
-}'
-```
-
-Example response:
-```json
-{
-    "risk_percent": 25.5
-}
-```
-
-
-## 🔄 CI/CD Pipeline
+## CI/CD Pipeline
 
 The project includes automated test and build processes with GitHub Actions. On every push and pull request:
 - Dependencies are installed
