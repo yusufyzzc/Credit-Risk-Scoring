@@ -1,0 +1,36 @@
+name: CI/CD Pipeline for Credit Risk Scoring ML Project
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        cd backend
+        python -m pip install --upgrade pip
+        pip install -r requierement.txt
+        pip install pytest
+    
+    - name: Run tests
+      run: |
+        cd backend
+        python -m pytest
+    
+    - name: Build Docker image
+      run: |
+        cd backend
+        docker build -t credit-risk-backend.    

@@ -1,0 +1,5 @@
+flask==2.0.1
+flask-cors==3.0.10
+scikit-learn==1.0.2
+numpy==1.21.2
+joblib==1.1.0
