@@ -2,7 +2,7 @@
 
 This project is a **machine learning-powered API** that predicts the risk of credit default based on basic financial features. It is packaged in a **Docker container** and integrated with **GitHub Actions CI/CD**  
 ## UI
-![UI](https://drive.google.com/file/d/1PZDMELdT_wc_g4g4srC6vlS-QdMjvgkf/view?usp=sharing)
+![UI](https://github.com/yusufyzzc/Credit-Risk-Scoring/blob/ac4af489db274a6272660485f1b858295e93399d/main.png)
 
 ## Features
 
