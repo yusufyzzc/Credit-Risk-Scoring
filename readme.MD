@@ -1,6 +1,9 @@
 # Credit Risk Scoring ML Project
 
-This project is a **machine learning-powered API** that predicts the risk of credit default based on basic financial features. It is packaged in a **Docker container** and integrated with **GitHub Actions CI/CD** . 
+This project is a **machine learning-powered API** that predicts the risk of credit default based on basic financial features. It is packaged in a **Docker container** and integrated with **GitHub Actions CI/CD**  
+## UI
+![UI](https://drive.google.com/file/d/1PZDMELdT_wc_g4g4srC6vlS-QdMjvgkf/view?usp=sharing)
+
 ## Features
 
 - Risk scoring using machine learning model
