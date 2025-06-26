@@ -20,27 +20,6 @@ This project is a **machine learning-powered API** that predicts the risk of cre
 - GitHub Actions
 
 
-## Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/credit-risk-scoring.git
-cd credit-risk-scoring
-```
-
-2. Install backend dependencies:
-```bash
-cd backend
-pip install -r requierement.txt
-```
-
-3. Run with Docker:
-```bash
-docker build -t credit-risk-backend .
-docker run -p 5000:5000 credit-risk-backend
-```
-
-
 ## CI/CD Pipeline
 
 The project includes automated test and build processes with GitHub Actions. On every push and pull request:
