@@ -42,6 +42,4 @@ test_api.py
 .env
 .env.local
 
-# CI/CD files (don't need in container)
-render.yaml
-railway.toml
+
