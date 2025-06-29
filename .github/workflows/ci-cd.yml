@@ -52,19 +52,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Debug build environment
-      run: |
-        echo "=== DEBUG BUILD ENVIRONMENT ==="
-        pwd
-        ls -la
-        echo "=== Dockerfile content ==="
-        if [ -f Dockerfile ]; then
-          head -10 Dockerfile
-        else
-          echo "❌ Dockerfile missing!"
-          exit 1
-        fi
-    
     - name: Create model file for Docker build
       run: |
         python -m pip install --upgrade pip
