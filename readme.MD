@@ -25,4 +25,3 @@ This project is a **machine learning-powered API** that predicts the risk of cre
 The project includes automated test and build processes with GitHub Actions. On every push and pull request:
 - Dependencies are installed
 - Tests are run
-- Docker image is built
