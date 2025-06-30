@@ -4,7 +4,7 @@ This project is a machine learning powered web application that predicts the ris
 
 ## Live Demo
 
-**(https://credit-risk-scoring.onrender.com)**
+**https://credit-risk-scoring.onrender.com**
 
 ## Features
 
