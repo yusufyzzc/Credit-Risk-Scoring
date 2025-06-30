@@ -2,7 +2,7 @@ import requests
 import json
 
 def test_api():
-    url = "http://localhost:8080/predict"
+    url = "http://localhost:5000/predict"
     
     # Test data
     test_data = {
