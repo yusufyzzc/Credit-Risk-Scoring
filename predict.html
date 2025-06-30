@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credit Risk Scoring</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      color: #fff;
+      background: radial-gradient(ellipse at 30% 30%, #233a6b 0%, #0a174e 80%);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+    .bg-spotlight {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(circle at 60% 40%, rgba(96,165,250,0.12) 0%, rgba(30,58,138,0.04) 60%, transparent 100%);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 1;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 0 10px 0;
+    }
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #60a5fa;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
+      border-radius: 8px;
+      display: inline-block;
+    }
+    nav a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: #e0e7ef;
+      font-weight: 500;
+      transition: color 0.2s;
+      position: relative;
+    }
+    nav a:hover {
+      color: #60a5fa;
+    }
+    .main-section {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+    }
+    .card {
+      background: rgba(30,58,138,0.85);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(30,58,138,0.18);
+      padding: 40px 32px 32px 32px;
+      max-width: 480px;
+      width: 100%;
+      margin: 40px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .card h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 28px;
+      color: #fff;
+      text-align: center;
+    }
+    .form-group {
+      width: 100%;
+      margin-bottom: 18px;
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #e0e7ef;
+    }
+    select, input[type="number"], input[type="text"] {
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1.5px solid #3b82f6;
+      font-size: 1rem;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      outline: none;
+      transition: border 0.2s, background 0.2s;
+    }
+    select:focus, input:focus {
+      border: 1.5px solid #60a5fa;
+      background: rgba(96,165,250,0.10);
+    }
+    .form-hint {
+      font-size: 0.92rem;
+      color: #b6c3e6;
+      margin-top: 2px;
+    }
+    .btn-predict {
+      width: 100%;
+      background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background 0.18s;
+      box-shadow: 0 2px 8px rgba(45,96,255,0.12);
+    }
+    .btn-predict:hover {
+      background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+    }
+    footer {
+      text-align: center;
+      color: #b6c3e6;
+      font-size: 0.98rem;
+      padding: 30px 0 18px 0;
+      width: 100%;
+      margin: 0 auto;
+      background: none;
+      position: relative;
+      left: 0;
+    }
+    @media (max-width: 600px) {
+      .card {
+        padding: 24px 8px;
+      }
+      .container {
+        padding: 24px 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-spotlight"></div>
+  <div class="container">
+    <header>
+      <div class="logo"><span class="logo-icon"></span>CreditRiskPro</div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+    <section class="main-section">
+      <form class="card" id="riskForm">
+        <h2>Credit Risk Scoring</h2>
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" min="18" required />
+        </div>
+        <div class="form-group">
+          <label for="income">Monthly Income</label>
+          <input type="number" id="income" name="income" min="0" required />
+          <div class="form-hint">Currency: USD (or local)</div>
+        </div>
+        <div class="form-group">
+          <label for="debt">Debt Ratio</label>
+          <input type="number" id="debt" name="debt" min="0" max="1" step="0.01" required />
+          <div class="form-hint">Value between 0.00 and 1.00</div>
+        </div>
+        <div class="form-group">
+          <label for="openLoans">Open Credit Lines</label>
+          <input type="number" id="openLoans" name="openLoans" min="0" required />
+        </div>
+        <div class="form-group">
+          <label for="latePayments">90+ Days Late Payments</label>
+          <input type="number" id="latePayments" name="latePayments" min="0" required />
+        </div>
+        <button type="submit" class="btn-predict">Predict Risk</button>
+        <div id="result" style="margin-top:18px; color:#fff; font-weight:600;"></div>
+      </form>
+      <script>
+        document.getElementById('riskForm').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const resultBox = document.getElementById('result');
+          resultBox.textContent = 'Calculating...';
+
+          const data = {
+            age: parseFloat(document.getElementById('age').value),
+            income: parseFloat(document.getElementById('income').value),
+            debt: parseFloat(document.getElementById('debt').value),
+            openLoans: parseFloat(document.getElementById('openLoans').value),
+            latePayments: parseFloat(document.getElementById('latePayments').value)
+          };
+
+          try {
+            const response = await fetch('http://localhost:8080/predict', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(data)
+            });
+            const result = await response.json();
+            resultBox.textContent = `Risk of default: ${result.risk_percent.toFixed(2)}%`;
+          } catch (err) {
+            resultBox.textContent = 'Server error or connection problem.';
+          }
+        });
+      </script>
+    </section>
+  </div>
+  <footer>
+    &copy; 2025 CreditRiskPro - YusufYaziciGroups. All rights reserved.
+  </footer>
+</body>
+</html> 

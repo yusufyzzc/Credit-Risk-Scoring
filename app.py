@@ -13,6 +13,14 @@ model = joblib.load("model.pkl")
 def home():
     return send_from_directory('.', 'index.html')
 
+@app.route('/predict.html')
+def predict_html():
+    return send_from_directory('.', 'predict.html')
+
+@app.route('/png/<path:filename>')
+def serve_png(filename):
+    return send_from_directory('png', filename)
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.json
