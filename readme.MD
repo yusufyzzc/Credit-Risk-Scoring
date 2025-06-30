@@ -1,29 +1,23 @@
 # Credit Risk Scoring ML Project
 
-This project is a machine learning powered web application that predicts the risk of credit default based on basic financial features. It is packaged in a Docker and integrated with GitHub Actions.
+A sophisticated machine learning web application that predicts credit default risk using advanced financial data analysis. Built with modern web technologies and deployed with containerization support.
 
-## Live Demo
+## Live 
 
-**https://credit-risk-scoring.onrender.com**
+**new version:** https://credit-risk-scoring-v2.onrender.com/
 
-## Features
-
-- Risk scoring using machine learning model
-- RESTful API endpoints
-- Docker container support
-- CI/CD pipeline integration
-
-## Technologies
-
-- Python 3.9
-- Flask
+### Backend
+- Python 3.9 
+- Flask 
 - scikit-learn
-- Docker
-- GitHub Actions
+- Gunicorn
+- NumPy & Pandas 
 
-## CI/CD Pipeline
+### Frontend
+- HTML5/CSS3 
+- JavaScript 
+- Google Fonts
 
-The project includes automated test and build processes with GitHub Actions. On every push and pull request:
-- Dependencies are installed
-- Tests are run
-- Keep-alive workflow pings the deployed service every 14 minutes to prevent cold starts
+### DevOps & Deployment
+- Docker 
+- Render
