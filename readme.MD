@@ -26,4 +26,4 @@ This project is a machine learning powered web application that predicts the ris
 The project includes automated test and build processes with GitHub Actions. On every push and pull request:
 - Dependencies are installed
 - Tests are run
-- Keep-alive workflow pings the deployed service every 14 minutes to prevent cold starts
+
