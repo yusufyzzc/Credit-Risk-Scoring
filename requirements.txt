@@ -1,8 +1,9 @@
-flask
-flask-cors
+django
+django-cors-headers
 scikit-learn
 numpy
 joblib
 pandas
 gunicorn
 requests
+whitenoise

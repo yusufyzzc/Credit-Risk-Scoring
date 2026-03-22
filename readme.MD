@@ -4,12 +4,12 @@ New branch of machine learning web application that predicts credit default risk
 
 ## Live 
 
-**new version:** https://credit-risk-scoring-v2.onrender.com/
+https://credit-risk-scoring-v2.onrender.com/
 
 
 ### Backend
 - Python 3.9 
-- Flask 
+- Django 
 - scikit-learn
 - Gunicorn
 - NumPy & Pandas 

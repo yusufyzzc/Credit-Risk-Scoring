@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -324,28 +325,28 @@
       <div class="hero-title">Digital Credit Risk Solutions for You</div>
       <div class="hero-desc">Empower your financial decisions with real-time, machine learning-based credit risk analysis. Fast, secure and easy to integrate into your workflow.</div>
       <div class="hero-actions">
-        <a href="predict.html"><button class="cta-btn">Get Started</button></a>
+        <a href="{% url 'predict_html' %}"><button class="cta-btn">Get Started</button></a>
         <a href="#how"><button class="cta-btn secondary">How it Works</button></a>
       </div>
     </section>
     <section class="features" id="features">
       <div class="feature-card">
-        <div class="feature-icon"><img src="png/locked.png" alt="Secure & Reliable" style="width:48px;height:48px;"></div>
+        <div class="feature-icon"><img src="{% static 'scoring/png/locked.png' %}" alt="Secure & Reliable" style="width:48px;height:48px;"></div>
         <div class="feature-title">Secure & Reliable</div>
         <div class="feature-desc">Your data is protected with industry-leading security standards and privacy controls.</div>
       </div>
       <div class="feature-card">
-        <div class="feature-icon"><img src="png/high-voltage.png" alt="Fast Analysis" style="width:48px;height:48px;"></div>
+        <div class="feature-icon"><img src="{% static 'scoring/png/high-voltage.png' %}" alt="Fast Analysis" style="width:48px;height:48px;"></div>
         <div class="feature-title">Fast Analysis</div>
         <div class="feature-desc">Get instant credit risk scores powered by state-of-the-art machine learning models.</div>
       </div>
       <div class="feature-card">
-        <div class="feature-icon"><img src="png/bar-chart.png" alt="Detailed Insights" style="width:48px;height:48px;"></div>
+        <div class="feature-icon"><img src="{% static 'scoring/png/bar-chart.png' %}" alt="Detailed Insights" style="width:48px;height:48px;"></div>
         <div class="feature-title">Detailed Insights</div>
         <div class="feature-desc">Access comprehensive reports and actionable insights for better decision making.</div>
       </div>
       <div class="feature-card">
-        <div class="feature-icon"><img src="png/globe-with-meridians.png" alt="Easy Integration" style="width:48px;height:48px;"></div>
+        <div class="feature-icon"><img src="{% static 'scoring/png/globe-with-meridians.png' %}" alt="Easy Integration" style="width:48px;height:48px;"></div>
         <div class="feature-title">Easy Integration</div>
         <div class="feature-desc">Seamlessly integrate with your existing systems via our robust API.</div>
       </div>
@@ -394,7 +395,7 @@
     </div>
   </div>
   <footer>
-    &copy; 2025 CreditRiskPro - YusufYaziciGroups.
+    &copy; 2026 CreditRiskPro - YusufYazici.
   </footer>
 </body>
 </html>

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -166,10 +167,10 @@
     <header>
       <div class="logo"><span class="logo-icon"></span>CreditRiskPro</div>
       <nav>
-        <a href="/">Home</a>
-        <a href="index.html#features">Features</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'home' %}#features">Features</a>
+        <a href="{% url 'home' %}#about">About</a>
+        <a href="{% url 'home' %}#contact">Contact</a>
       </nav>
     </header>
     <section class="main-section">
@@ -215,7 +216,7 @@
           };
 
           try {
-            const response = await fetch('/predict', {
+            const response = await fetch('{% url "predict" %}', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify(data)
@@ -230,7 +231,7 @@
     </section>
   </div>
   <footer>
-    &copy; 2025 CreditRiskPro - YusufYaziciGroups.
+    &copy; 2026 CreditRiskPro - YusufYazici.
   </footer>
 </body>
 </html> 

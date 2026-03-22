@@ -2,9 +2,9 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main, master, v2 ]
+    branches: [ main, master]
   pull_request:
-    branches: [ main, master, v2 ]
+    branches: [ main, master]
 
 jobs:
   test:
@@ -26,21 +26,21 @@ jobs:
     - name: Create model file
       run: python train_model.py
     
-    - name: Test application
+    - name: Test Django application
       run: |
+        # 1. Verify Django system checks pass
+        python manage.py check
+        
+        # 2. Verify model loads correctly
         python -c "
-        from app import app
-        import tempfile
         import os
+        import django
+        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'credit_risk_project.settings')
+        django.setup()
         
-        # Test app creation
-        assert app is not None
-        print('App created successfully')
-        
-        # Test model loading
-        from app import model
-        assert model is not None
+        from scoring.views import _MODEL
+        assert _MODEL is not None
         print('Model loaded successfully')
         
-        print('✅ All tests passed!')
+        print('All tests passed!')
         "
