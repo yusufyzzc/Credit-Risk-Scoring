@@ -14,7 +14,7 @@ https://credit-risk-scoring-v2.onrender.com/
 
 
 ### Backend
-- Python 3.9 
+- Python 3.14
 - Django 
 - scikit-learn
 - Gunicorn
