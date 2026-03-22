@@ -15,9 +15,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
+from django.views.static import serve
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('scoring.urls')),
+]
+
+# Fallback static serving for environments where collectstatic output is missing.
+urlpatterns += [
+    re_path(
+        r'^static/(?P<path>.*)$',
+        serve,
+        {'document_root': str(settings.BASE_DIR / 'scoring' / 'static')},
+    ),
 ]
